@@ -1,0 +1,48 @@
+c:\documents and settings\ika\my documents\visual studio 2010\Projects\myALPR1\myALPR1\bin\Debug\myALPR1.exe
+c:\documents and settings\ika\my documents\visual studio 2010\Projects\myALPR1\myALPR1\bin\Debug\myALPR1.pdb
+c:\documents and settings\ika\my documents\visual studio 2010\Projects\myALPR1\myALPR1\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\documents and settings\ika\my documents\visual studio 2010\Projects\myALPR1\myALPR1\obj\x86\Debug\myALPR1.Form1.resources
+c:\documents and settings\ika\my documents\visual studio 2010\Projects\myALPR1\myALPR1\obj\x86\Debug\myALPR1.Properties.Resources.resources
+c:\documents and settings\ika\my documents\visual studio 2010\Projects\myALPR1\myALPR1\obj\x86\Debug\GenerateResource.read.1.tlog
+c:\documents and settings\ika\my documents\visual studio 2010\Projects\myALPR1\myALPR1\obj\x86\Debug\GenerateResource.write.1.tlog
+c:\documents and settings\ika\my documents\visual studio 2010\Projects\myALPR1\myALPR1\obj\x86\Debug\myALPR1.exe
+c:\documents and settings\ika\my documents\visual studio 2010\Projects\myALPR1\myALPR1\obj\x86\Debug\myALPR1.pdb
+c:\documents and settings\ika\my documents\visual studio 2010\Projects\myALPR1\myALPR1\bin\Debug\AForge.dll
+c:\documents and settings\ika\my documents\visual studio 2010\Projects\myALPR1\myALPR1\bin\Debug\AForge.Imaging.dll
+c:\documents and settings\ika\my documents\visual studio 2010\Projects\myALPR1\myALPR1\bin\Debug\AForge.Math.dll
+c:\documents and settings\ika\my documents\visual studio 2010\Projects\myALPR1\myALPR1\bin\Debug\DockingToolbar.dll
+c:\documents and settings\ika\my documents\visual studio 2010\Projects\myALPR1\myALPR1\bin\Debug\SourceGrid2.dll
+c:\documents and settings\ika\my documents\visual studio 2010\Projects\myALPR1\myALPR1\bin\Debug\SourceLibrary.dll
+c:\documents and settings\ika\my documents\visual studio 2010\Projects\myALPR1\myALPR1\bin\Debug\WeifenLuo.WinFormsUI.dll
+C:\Documents and Settings\ika\my documents\visual studio 2010\Projects\myALPR1\myALPR1\obj\x86\Debug\myALPR1.BlobForm.resources
+C:\Documents and Settings\ika\My Documents\Visual Studio 2010\Projects\myALPR1\obj\x86\Debug\myALPR1.exe
+C:\Documents and Settings\ika\My Documents\Visual Studio 2010\Projects\myALPR1\obj\x86\Debug\myALPR1.pdb
+C:\Documents and Settings\404\Desktop\26.03.2012\myALPR1\obj\x86\Debug\myALPR1.exe
+C:\Documents and Settings\404\Desktop\26.03.2012\myALPR1\obj\x86\Debug\myALPR1.pdb
+C:\Documents and Settings\404\Desktop\17.04.2012 ALPR\myALPR1\obj\x86\Debug\myALPR1.exe
+C:\Documents and Settings\404\Desktop\17.04.2012 ALPR\myALPR1\obj\x86\Debug\myALPR1.pdb
+C:\Documents and Settings\404\Desktop\17.04.2012 ALPR\myALPR1\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\404\Desktop\17.04.2012 ALPR\myALPR1\obj\x86\Debug\myALPR1.AddPlate.resources
+C:\Documents and Settings\404\Desktop\17.04.2012 ALPR\myALPR1\obj\x86\Debug\myALPR1.BlobForm.resources
+C:\Documents and Settings\404\Desktop\17.04.2012 ALPR\myALPR1\obj\x86\Debug\myALPR1.ConfigurationsForm.resources
+C:\Documents and Settings\404\Desktop\17.04.2012 ALPR\myALPR1\obj\x86\Debug\myALPR1.Form1.resources
+C:\Documents and Settings\404\Desktop\17.04.2012 ALPR\myALPR1\obj\x86\Debug\myALPR1.Properties.Resources.resources
+C:\Documents and Settings\404\Desktop\17.04.2012 ALPR\myALPR1\obj\x86\Debug\myALPR1.CapturedPlatesLog.resources
+C:\Documents and Settings\404\Desktop\17.04.2012 ALPR\myALPR1\obj\x86\Debug\myALPR1.SecBase.resources
+C:\Documents and Settings\404\Desktop\17.04.2012 ALPR\myALPR1\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Documents and Settings\404\Desktop\17.04.2012 ALPR\myALPR1\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Documents and Settings\404\Desktop\17.04.2012 ALPR\myALPR1\bin\Debug\myALPR1.exe
+C:\Documents and Settings\404\Desktop\17.04.2012 ALPR\myALPR1\bin\Debug\myALPR1.pdb
+C:\Documents and Settings\404\Desktop\17.04.2012 ALPR\myALPR1\bin\Debug\AForge.Controls.dll
+C:\Documents and Settings\404\Desktop\17.04.2012 ALPR\myALPR1\bin\Debug\AForge.DebuggerVisualizers (2008).dll
+C:\Documents and Settings\404\Desktop\17.04.2012 ALPR\myALPR1\bin\Debug\AForge.DebuggerVisualizers (2010).dll
+C:\Documents and Settings\404\Desktop\17.04.2012 ALPR\myALPR1\bin\Debug\AForge.dll
+C:\Documents and Settings\404\Desktop\17.04.2012 ALPR\myALPR1\bin\Debug\AForge.Imaging.dll
+C:\Documents and Settings\404\Desktop\17.04.2012 ALPR\myALPR1\bin\Debug\AForge.Imaging.Formats.dll
+C:\Documents and Settings\404\Desktop\17.04.2012 ALPR\myALPR1\bin\Debug\AForge.Imaging.IPPrototyper.dll
+C:\Documents and Settings\404\Desktop\17.04.2012 ALPR\myALPR1\bin\Debug\AForge.Math.dll
+C:\Documents and Settings\404\Desktop\17.04.2012 ALPR\myALPR1\bin\Debug\AForge.Video.DirectShow.dll
+C:\Documents and Settings\404\Desktop\17.04.2012 ALPR\myALPR1\bin\Debug\AForge.Video.dll
+C:\Documents and Settings\404\Desktop\17.04.2012 ALPR\myALPR1\bin\Debug\AForge.Video.FFMPEG.dll
+C:\Documents and Settings\404\Desktop\17.04.2012 ALPR\myALPR1\bin\Debug\AForge.Video.VFW.dll
+C:\Documents and Settings\404\Desktop\17.04.2012 ALPR\myALPR1\bin\Debug\AxInterop.nvUnifiedControlLib.dll
