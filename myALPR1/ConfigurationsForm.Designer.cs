@@ -33,7 +33,7 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.textBox_connectionString = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox_ACTiGeneral = new System.Windows.Forms.GroupBox();
             this.textBox_Pass = new System.Windows.Forms.TextBox();
             this.textBox_User = new System.Windows.Forms.TextBox();
             this.textBox_IP = new System.Windows.Forms.TextBox();
@@ -42,19 +42,31 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.checkBox_COMDTR = new System.Windows.Forms.CheckBox();
+            this.checkBox_COMRTS = new System.Windows.Forms.CheckBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.checkBox_ACTiDO2 = new System.Windows.Forms.CheckBox();
+            this.checkBox_ACTiDO1 = new System.Windows.Forms.CheckBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.checkBox_UseEdge = new System.Windows.Forms.CheckBox();
+            this.checkBox_VerticalDetection = new System.Windows.Forms.CheckBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkBox_COMAutoOpen = new System.Windows.Forms.CheckBox();
+            this.checkBox_ACTiAutoConn = new System.Windows.Forms.CheckBox();
+            this.checkBox_SaveNumbers = new System.Windows.Forms.CheckBox();
+            this.checkBox_AutostartDetection = new System.Windows.Forms.CheckBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.checkBox7 = new System.Windows.Forms.CheckBox();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox_FramesTimeout = new System.Windows.Forms.TextBox();
+            this.textBox_MinCorrelation = new System.Windows.Forms.TextBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.groupBox_ACTiAdvanced = new System.Windows.Forms.GroupBox();
             this.comboBox_ACTiBaudRate = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox_ACTiMultPort = new System.Windows.Forms.TextBox();
@@ -89,11 +101,18 @@
             this.lblDataBits = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox3.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.groupBox_ACTiGeneral.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            this.groupBox_ACTiAdvanced.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.gbPortSettings.SuspendLayout();
             this.SuspendLayout();
@@ -101,7 +120,7 @@
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(309, 281);
+            this.button1.Location = new System.Drawing.Point(309, 336);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(76, 29);
             this.button1.TabIndex = 0;
@@ -112,7 +131,7 @@
             // button2
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(227, 281);
+            this.button2.Location = new System.Drawing.Point(227, 336);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(76, 29);
             this.button2.TabIndex = 1;
@@ -126,7 +145,7 @@
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Location = new System.Drawing.Point(5, 6);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(374, 135);
+            this.groupBox3.Size = new System.Drawing.Size(370, 135);
             this.groupBox3.TabIndex = 7;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Databse";
@@ -149,21 +168,21 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "SQL Database connection string:";
             // 
-            // groupBox1
+            // groupBox_ACTiGeneral
             // 
-            this.groupBox1.Controls.Add(this.textBox_Pass);
-            this.groupBox1.Controls.Add(this.textBox_User);
-            this.groupBox1.Controls.Add(this.textBox_IP);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(6, 6);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(188, 102);
-            this.groupBox1.TabIndex = 8;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "General";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            this.groupBox_ACTiGeneral.Controls.Add(this.textBox_Pass);
+            this.groupBox_ACTiGeneral.Controls.Add(this.textBox_User);
+            this.groupBox_ACTiGeneral.Controls.Add(this.textBox_IP);
+            this.groupBox_ACTiGeneral.Controls.Add(this.label3);
+            this.groupBox_ACTiGeneral.Controls.Add(this.label2);
+            this.groupBox_ACTiGeneral.Controls.Add(this.label1);
+            this.groupBox_ACTiGeneral.Location = new System.Drawing.Point(6, 6);
+            this.groupBox_ACTiGeneral.Name = "groupBox_ACTiGeneral";
+            this.groupBox_ACTiGeneral.Size = new System.Drawing.Size(188, 102);
+            this.groupBox_ACTiGeneral.TabIndex = 8;
+            this.groupBox_ACTiGeneral.TabStop = false;
+            this.groupBox_ACTiGeneral.Text = "General";
+            this.groupBox_ACTiGeneral.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // textBox_Pass
             // 
@@ -222,29 +241,186 @@
             this.tabControl1.Location = new System.Drawing.Point(3, 3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(389, 272);
+            this.tabControl1.Size = new System.Drawing.Size(389, 327);
             this.tabControl1.TabIndex = 9;
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.groupBox4);
+            this.tabPage4.Controls.Add(this.groupBox2);
+            this.tabPage4.Controls.Add(this.groupBox1);
             this.tabPage4.Controls.Add(this.label7);
-            this.tabPage4.Controls.Add(this.checkBox7);
-            this.tabPage4.Controls.Add(this.checkBox6);
-            this.tabPage4.Controls.Add(this.checkBox5);
-            this.tabPage4.Controls.Add(this.checkBox4);
-            this.tabPage4.Controls.Add(this.checkBox3);
-            this.tabPage4.Controls.Add(this.checkBox2);
-            this.tabPage4.Controls.Add(this.checkBox1);
             this.tabPage4.Controls.Add(this.label6);
-            this.tabPage4.Controls.Add(this.textBox2);
-            this.tabPage4.Controls.Add(this.textBox1);
+            this.tabPage4.Controls.Add(this.textBox_FramesTimeout);
+            this.tabPage4.Controls.Add(this.textBox_MinCorrelation);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(381, 246);
+            this.tabPage4.Size = new System.Drawing.Size(381, 301);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "General";
             this.tabPage4.UseVisualStyleBackColor = true;
+            this.tabPage4.Click += new System.EventHandler(this.tabPage4_Click);
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.groupBox6);
+            this.groupBox4.Controls.Add(this.groupBox5);
+            this.groupBox4.Location = new System.Drawing.Point(200, 6);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(175, 114);
+            this.groupBox4.TabIndex = 6;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Output";
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.checkBox_COMDTR);
+            this.groupBox6.Controls.Add(this.checkBox_COMRTS);
+            this.groupBox6.Location = new System.Drawing.Point(6, 65);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(163, 42);
+            this.groupBox6.TabIndex = 0;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "COM Outputs";
+            // 
+            // checkBox_COMDTR
+            // 
+            this.checkBox_COMDTR.AutoSize = true;
+            this.checkBox_COMDTR.Location = new System.Drawing.Point(83, 19);
+            this.checkBox_COMDTR.Name = "checkBox_COMDTR";
+            this.checkBox_COMDTR.Size = new System.Drawing.Size(49, 17);
+            this.checkBox_COMDTR.TabIndex = 0;
+            this.checkBox_COMDTR.Text = "DTR";
+            this.checkBox_COMDTR.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_COMRTS
+            // 
+            this.checkBox_COMRTS.AutoSize = true;
+            this.checkBox_COMRTS.Location = new System.Drawing.Point(6, 19);
+            this.checkBox_COMRTS.Name = "checkBox_COMRTS";
+            this.checkBox_COMRTS.Size = new System.Drawing.Size(48, 17);
+            this.checkBox_COMRTS.TabIndex = 0;
+            this.checkBox_COMRTS.Text = "RTS";
+            this.checkBox_COMRTS.UseVisualStyleBackColor = true;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.checkBox_ACTiDO2);
+            this.groupBox5.Controls.Add(this.checkBox_ACTiDO1);
+            this.groupBox5.Location = new System.Drawing.Point(6, 19);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(163, 42);
+            this.groupBox5.TabIndex = 0;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "ACTi Outputs";
+            // 
+            // checkBox_ACTiDO2
+            // 
+            this.checkBox_ACTiDO2.AutoSize = true;
+            this.checkBox_ACTiDO2.Location = new System.Drawing.Point(83, 19);
+            this.checkBox_ACTiDO2.Name = "checkBox_ACTiDO2";
+            this.checkBox_ACTiDO2.Size = new System.Drawing.Size(48, 17);
+            this.checkBox_ACTiDO2.TabIndex = 0;
+            this.checkBox_ACTiDO2.Text = "DO2";
+            this.checkBox_ACTiDO2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_ACTiDO1
+            // 
+            this.checkBox_ACTiDO1.AutoSize = true;
+            this.checkBox_ACTiDO1.Location = new System.Drawing.Point(6, 19);
+            this.checkBox_ACTiDO1.Name = "checkBox_ACTiDO1";
+            this.checkBox_ACTiDO1.Size = new System.Drawing.Size(48, 17);
+            this.checkBox_ACTiDO1.TabIndex = 0;
+            this.checkBox_ACTiDO1.Text = "DO1";
+            this.checkBox_ACTiDO1.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.checkBox_UseEdge);
+            this.groupBox2.Controls.Add(this.checkBox_VerticalDetection);
+            this.groupBox2.Location = new System.Drawing.Point(9, 174);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(179, 77);
+            this.groupBox2.TabIndex = 5;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Algorithms";
+            // 
+            // checkBox_UseEdge
+            // 
+            this.checkBox_UseEdge.AutoSize = true;
+            this.checkBox_UseEdge.Location = new System.Drawing.Point(6, 19);
+            this.checkBox_UseEdge.Name = "checkBox_UseEdge";
+            this.checkBox_UseEdge.Size = new System.Drawing.Size(133, 17);
+            this.checkBox_UseEdge.TabIndex = 2;
+            this.checkBox_UseEdge.Text = " Edge based detection";
+            this.checkBox_UseEdge.UseVisualStyleBackColor = true;
+            this.checkBox_UseEdge.CheckedChanged += new System.EventHandler(this.checkBox_UseEdge_CheckedChanged);
+            // 
+            // checkBox_VerticalDetection
+            // 
+            this.checkBox_VerticalDetection.AutoSize = true;
+            this.checkBox_VerticalDetection.Location = new System.Drawing.Point(6, 42);
+            this.checkBox_VerticalDetection.Name = "checkBox_VerticalDetection";
+            this.checkBox_VerticalDetection.Size = new System.Drawing.Size(176, 17);
+            this.checkBox_VerticalDetection.TabIndex = 2;
+            this.checkBox_VerticalDetection.Text = " Vertical based detection(better)";
+            this.checkBox_VerticalDetection.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.checkBox_COMAutoOpen);
+            this.groupBox1.Controls.Add(this.checkBox_ACTiAutoConn);
+            this.groupBox1.Controls.Add(this.checkBox_SaveNumbers);
+            this.groupBox1.Controls.Add(this.checkBox_AutostartDetection);
+            this.groupBox1.Location = new System.Drawing.Point(9, 54);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(179, 114);
+            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Automotion";
+            // 
+            // checkBox_COMAutoOpen
+            // 
+            this.checkBox_COMAutoOpen.AutoSize = true;
+            this.checkBox_COMAutoOpen.Location = new System.Drawing.Point(16, 42);
+            this.checkBox_COMAutoOpen.Name = "checkBox_COMAutoOpen";
+            this.checkBox_COMAutoOpen.Size = new System.Drawing.Size(124, 17);
+            this.checkBox_COMAutoOpen.TabIndex = 2;
+            this.checkBox_COMAutoOpen.Text = "Auto open COM Port";
+            this.checkBox_COMAutoOpen.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_ACTiAutoConn
+            // 
+            this.checkBox_ACTiAutoConn.AutoSize = true;
+            this.checkBox_ACTiAutoConn.Location = new System.Drawing.Point(16, 19);
+            this.checkBox_ACTiAutoConn.Name = "checkBox_ACTiAutoConn";
+            this.checkBox_ACTiAutoConn.Size = new System.Drawing.Size(163, 17);
+            this.checkBox_ACTiAutoConn.TabIndex = 2;
+            this.checkBox_ACTiAutoConn.Text = "Auto Connect to ACTi Server";
+            this.checkBox_ACTiAutoConn.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_SaveNumbers
+            // 
+            this.checkBox_SaveNumbers.AutoSize = true;
+            this.checkBox_SaveNumbers.Location = new System.Drawing.Point(16, 88);
+            this.checkBox_SaveNumbers.Name = "checkBox_SaveNumbers";
+            this.checkBox_SaveNumbers.Size = new System.Drawing.Size(152, 17);
+            this.checkBox_SaveNumbers.TabIndex = 2;
+            this.checkBox_SaveNumbers.Text = "Save all detected numbers";
+            this.checkBox_SaveNumbers.UseVisualStyleBackColor = true;
+            this.checkBox_SaveNumbers.CheckedChanged += new System.EventHandler(this.checkBox6_CheckedChanged);
+            // 
+            // checkBox_AutostartDetection
+            // 
+            this.checkBox_AutostartDetection.AutoSize = true;
+            this.checkBox_AutostartDetection.Location = new System.Drawing.Point(16, 65);
+            this.checkBox_AutostartDetection.Name = "checkBox_AutostartDetection";
+            this.checkBox_AutostartDetection.Size = new System.Drawing.Size(118, 17);
+            this.checkBox_AutostartDetection.TabIndex = 2;
+            this.checkBox_AutostartDetection.Text = "Auto start detection";
+            this.checkBox_AutostartDetection.UseVisualStyleBackColor = true;
+            this.checkBox_AutostartDetection.CheckedChanged += new System.EventHandler(this.checkBox5_CheckedChanged);
             // 
             // label7
             // 
@@ -255,79 +431,6 @@
             this.label7.TabIndex = 3;
             this.label7.Text = "Frames timeout";
             // 
-            // checkBox7
-            // 
-            this.checkBox7.AutoSize = true;
-            this.checkBox7.Location = new System.Drawing.Point(9, 212);
-            this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(86, 17);
-            this.checkBox7.TabIndex = 2;
-            this.checkBox7.Text = "Use contrast";
-            this.checkBox7.UseVisualStyleBackColor = true;
-            this.checkBox7.CheckedChanged += new System.EventHandler(this.checkBox6_CheckedChanged);
-            // 
-            // checkBox6
-            // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(9, 189);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(152, 17);
-            this.checkBox6.TabIndex = 2;
-            this.checkBox6.Text = "Save all detected numbers";
-            this.checkBox6.UseVisualStyleBackColor = true;
-            this.checkBox6.CheckedChanged += new System.EventHandler(this.checkBox6_CheckedChanged);
-            // 
-            // checkBox5
-            // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(9, 166);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(118, 17);
-            this.checkBox5.TabIndex = 2;
-            this.checkBox5.Text = "Auto start detection";
-            this.checkBox5.UseVisualStyleBackColor = true;
-            this.checkBox5.CheckedChanged += new System.EventHandler(this.checkBox5_CheckedChanged);
-            // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(9, 143);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(220, 17);
-            this.checkBox4.TabIndex = 2;
-            this.checkBox4.Text = "Use VerticalLines based detection(better)";
-            this.checkBox4.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(9, 120);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(152, 17);
-            this.checkBox3.TabIndex = 2;
-            this.checkBox3.Text = "Use Edge based detection";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(9, 97);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(124, 17);
-            this.checkBox2.TabIndex = 2;
-            this.checkBox2.Text = "Auto open COM Port";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(9, 74);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(164, 17);
-            this.checkBox1.TabIndex = 2;
-            this.checkBox1.Text = "Auto Connect to ACTi SErver";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -337,19 +440,19 @@
             this.label6.TabIndex = 1;
             this.label6.Text = "Min. correlation";
             // 
-            // textBox2
+            // textBox_FramesTimeout
             // 
-            this.textBox2.Location = new System.Drawing.Point(88, 28);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 0;
+            this.textBox_FramesTimeout.Location = new System.Drawing.Point(88, 28);
+            this.textBox_FramesTimeout.Name = "textBox_FramesTimeout";
+            this.textBox_FramesTimeout.Size = new System.Drawing.Size(100, 20);
+            this.textBox_FramesTimeout.TabIndex = 0;
             // 
-            // textBox1
+            // textBox_MinCorrelation
             // 
-            this.textBox1.Location = new System.Drawing.Point(88, 6);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 0;
+            this.textBox_MinCorrelation.Location = new System.Drawing.Point(88, 6);
+            this.textBox_MinCorrelation.Name = "textBox_MinCorrelation";
+            this.textBox_MinCorrelation.Size = new System.Drawing.Size(100, 20);
+            this.textBox_MinCorrelation.TabIndex = 0;
             // 
             // tabPage1
             // 
@@ -357,42 +460,84 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(381, 246);
+            this.tabPage1.Size = new System.Drawing.Size(381, 301);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "SQL Database";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.comboBox_ACTiBaudRate);
-            this.tabPage2.Controls.Add(this.comboBox1);
-            this.tabPage2.Controls.Add(this.textBox_ACTiMultPort);
-            this.tabPage2.Controls.Add(this.textBox_ACTiHttpPort);
-            this.tabPage2.Controls.Add(this.label15);
-            this.tabPage2.Controls.Add(this.label11);
-            this.tabPage2.Controls.Add(this.textBox_ACTiControlPort);
-            this.tabPage2.Controls.Add(this.textBox_ATCiID);
-            this.tabPage2.Controls.Add(this.textBox_ACTiStreamngPort);
-            this.tabPage2.Controls.Add(this.textBox_ACTiMultIP);
-            this.tabPage2.Controls.Add(this.label14);
-            this.tabPage2.Controls.Add(this.label9);
-            this.tabPage2.Controls.Add(this.label13);
-            this.tabPage2.Controls.Add(this.label10);
-            this.tabPage2.Controls.Add(this.label17);
-            this.tabPage2.Controls.Add(this.label16);
-            this.tabPage2.Controls.Add(this.textBox_ACTiRegPort);
-            this.tabPage2.Controls.Add(this.label12);
-            this.tabPage2.Controls.Add(this.textBox_MediaType);
-            this.tabPage2.Controls.Add(this.label8);
-            this.tabPage2.Controls.Add(this.groupBox1);
+            this.tabPage2.Controls.Add(this.groupBox7);
+            this.tabPage2.Controls.Add(this.groupBox_ACTiAdvanced);
+            this.tabPage2.Controls.Add(this.groupBox_ACTiGeneral);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(381, 246);
+            this.tabPage2.Size = new System.Drawing.Size(381, 301);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "ACTi Video Server";
             this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.checkBox1);
+            this.groupBox7.Controls.Add(this.checkBox2);
+            this.groupBox7.Location = new System.Drawing.Point(200, 7);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(163, 42);
+            this.groupBox7.TabIndex = 13;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "ACTi Outputs";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(83, 19);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(48, 17);
+            this.checkBox1.TabIndex = 0;
+            this.checkBox1.Text = "DO2";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(6, 19);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(48, 17);
+            this.checkBox2.TabIndex = 0;
+            this.checkBox2.Text = "DO1";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // groupBox_ACTiAdvanced
+            // 
+            this.groupBox_ACTiAdvanced.Controls.Add(this.comboBox_ACTiBaudRate);
+            this.groupBox_ACTiAdvanced.Controls.Add(this.comboBox1);
+            this.groupBox_ACTiAdvanced.Controls.Add(this.textBox_ACTiMultPort);
+            this.groupBox_ACTiAdvanced.Controls.Add(this.textBox_ACTiHttpPort);
+            this.groupBox_ACTiAdvanced.Controls.Add(this.label15);
+            this.groupBox_ACTiAdvanced.Controls.Add(this.label11);
+            this.groupBox_ACTiAdvanced.Controls.Add(this.textBox_ACTiControlPort);
+            this.groupBox_ACTiAdvanced.Controls.Add(this.textBox_ATCiID);
+            this.groupBox_ACTiAdvanced.Controls.Add(this.textBox_ACTiStreamngPort);
+            this.groupBox_ACTiAdvanced.Controls.Add(this.textBox_ACTiMultIP);
+            this.groupBox_ACTiAdvanced.Controls.Add(this.label14);
+            this.groupBox_ACTiAdvanced.Controls.Add(this.label9);
+            this.groupBox_ACTiAdvanced.Controls.Add(this.label13);
+            this.groupBox_ACTiAdvanced.Controls.Add(this.label10);
+            this.groupBox_ACTiAdvanced.Controls.Add(this.label17);
+            this.groupBox_ACTiAdvanced.Controls.Add(this.label16);
+            this.groupBox_ACTiAdvanced.Controls.Add(this.textBox_ACTiRegPort);
+            this.groupBox_ACTiAdvanced.Controls.Add(this.label12);
+            this.groupBox_ACTiAdvanced.Controls.Add(this.textBox_MediaType);
+            this.groupBox_ACTiAdvanced.Controls.Add(this.label8);
+            this.groupBox_ACTiAdvanced.Location = new System.Drawing.Point(6, 114);
+            this.groupBox_ACTiAdvanced.Name = "groupBox_ACTiAdvanced";
+            this.groupBox_ACTiAdvanced.Size = new System.Drawing.Size(364, 155);
+            this.groupBox_ACTiAdvanced.TabIndex = 12;
+            this.groupBox_ACTiAdvanced.TabStop = false;
+            this.groupBox_ACTiAdvanced.Text = "Advanced";
             // 
             // comboBox_ACTiBaudRate
             // 
@@ -406,7 +551,7 @@
             "38400",
             "57600",
             "115200"});
-            this.comboBox_ACTiBaudRate.Location = new System.Drawing.Point(266, 24);
+            this.comboBox_ACTiBaudRate.Location = new System.Drawing.Point(256, 11);
             this.comboBox_ACTiBaudRate.Name = "comboBox_ACTiBaudRate";
             this.comboBox_ACTiBaudRate.Size = new System.Drawing.Size(96, 21);
             this.comboBox_ACTiBaudRate.TabIndex = 11;
@@ -423,21 +568,21 @@
             "38400",
             "57600",
             "115200"});
-            this.comboBox1.Location = new System.Drawing.Point(293, 24);
+            this.comboBox1.Location = new System.Drawing.Point(283, 11);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(69, 21);
             this.comboBox1.TabIndex = 11;
             // 
             // textBox_ACTiMultPort
             // 
-            this.textBox_ACTiMultPort.Location = new System.Drawing.Point(280, 130);
+            this.textBox_ACTiMultPort.Location = new System.Drawing.Point(270, 117);
             this.textBox_ACTiMultPort.Name = "textBox_ACTiMultPort";
             this.textBox_ACTiMultPort.Size = new System.Drawing.Size(82, 20);
             this.textBox_ACTiMultPort.TabIndex = 10;
             // 
             // textBox_ACTiHttpPort
             // 
-            this.textBox_ACTiHttpPort.Location = new System.Drawing.Point(77, 192);
+            this.textBox_ACTiHttpPort.Location = new System.Drawing.Point(71, 90);
             this.textBox_ACTiHttpPort.Name = "textBox_ACTiHttpPort";
             this.textBox_ACTiHttpPort.Size = new System.Drawing.Size(96, 20);
             this.textBox_ACTiHttpPort.TabIndex = 10;
@@ -445,7 +590,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(201, 133);
+            this.label15.Location = new System.Drawing.Point(191, 120);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(68, 13);
             this.label15.TabIndex = 9;
@@ -454,7 +599,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(12, 195);
+            this.label11.Location = new System.Drawing.Point(6, 93);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(46, 13);
             this.label11.TabIndex = 9;
@@ -462,28 +607,28 @@
             // 
             // textBox_ACTiControlPort
             // 
-            this.textBox_ACTiControlPort.Location = new System.Drawing.Point(266, 78);
+            this.textBox_ACTiControlPort.Location = new System.Drawing.Point(256, 65);
             this.textBox_ACTiControlPort.Name = "textBox_ACTiControlPort";
             this.textBox_ACTiControlPort.Size = new System.Drawing.Size(96, 20);
             this.textBox_ACTiControlPort.TabIndex = 10;
             // 
             // textBox_ATCiID
             // 
-            this.textBox_ATCiID.Location = new System.Drawing.Point(77, 140);
+            this.textBox_ATCiID.Location = new System.Drawing.Point(71, 38);
             this.textBox_ATCiID.Name = "textBox_ATCiID";
             this.textBox_ATCiID.Size = new System.Drawing.Size(96, 20);
             this.textBox_ATCiID.TabIndex = 10;
             // 
             // textBox_ACTiStreamngPort
             // 
-            this.textBox_ACTiStreamngPort.Location = new System.Drawing.Point(280, 104);
+            this.textBox_ACTiStreamngPort.Location = new System.Drawing.Point(270, 91);
             this.textBox_ACTiStreamngPort.Name = "textBox_ACTiStreamngPort";
             this.textBox_ACTiStreamngPort.Size = new System.Drawing.Size(82, 20);
             this.textBox_ACTiStreamngPort.TabIndex = 10;
             // 
             // textBox_ACTiMultIP
             // 
-            this.textBox_ACTiMultIP.Location = new System.Drawing.Point(77, 166);
+            this.textBox_ACTiMultIP.Location = new System.Drawing.Point(71, 64);
             this.textBox_ACTiMultIP.Name = "textBox_ACTiMultIP";
             this.textBox_ACTiMultIP.Size = new System.Drawing.Size(96, 20);
             this.textBox_ACTiMultIP.TabIndex = 10;
@@ -491,7 +636,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(201, 81);
+            this.label14.Location = new System.Drawing.Point(191, 68);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(59, 13);
             this.label14.TabIndex = 9;
@@ -500,7 +645,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(12, 143);
+            this.label9.Location = new System.Drawing.Point(6, 41);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(18, 13);
             this.label9.TabIndex = 9;
@@ -509,7 +654,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(201, 107);
+            this.label13.Location = new System.Drawing.Point(191, 94);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(73, 13);
             this.label13.TabIndex = 9;
@@ -518,7 +663,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(12, 169);
+            this.label10.Location = new System.Drawing.Point(6, 67);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(59, 13);
             this.label10.TabIndex = 9;
@@ -527,7 +672,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(201, 27);
+            this.label17.Location = new System.Drawing.Point(191, 14);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(55, 13);
             this.label17.TabIndex = 9;
@@ -536,7 +681,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(201, 55);
+            this.label16.Location = new System.Drawing.Point(191, 42);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(65, 13);
             this.label16.TabIndex = 9;
@@ -544,7 +689,7 @@
             // 
             // textBox_ACTiRegPort
             // 
-            this.textBox_ACTiRegPort.Location = new System.Drawing.Point(266, 52);
+            this.textBox_ACTiRegPort.Location = new System.Drawing.Point(256, 39);
             this.textBox_ACTiRegPort.Name = "textBox_ACTiRegPort";
             this.textBox_ACTiRegPort.Size = new System.Drawing.Size(96, 20);
             this.textBox_ACTiRegPort.TabIndex = 10;
@@ -552,7 +697,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(201, 55);
+            this.label12.Location = new System.Drawing.Point(191, 42);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(65, 13);
             this.label12.TabIndex = 9;
@@ -560,7 +705,7 @@
             // 
             // textBox_MediaType
             // 
-            this.textBox_MediaType.Location = new System.Drawing.Point(77, 114);
+            this.textBox_MediaType.Location = new System.Drawing.Point(71, 12);
             this.textBox_MediaType.Name = "textBox_MediaType";
             this.textBox_MediaType.Size = new System.Drawing.Size(96, 20);
             this.textBox_MediaType.TabIndex = 10;
@@ -568,7 +713,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(12, 117);
+            this.label8.Location = new System.Drawing.Point(6, 15);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(60, 13);
             this.label8.TabIndex = 9;
@@ -581,14 +726,14 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(381, 246);
+            this.tabPage3.Size = new System.Drawing.Size(381, 301);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "COM controls";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(301, 85);
+            this.button3.Location = new System.Drawing.Point(289, 89);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 9;
@@ -598,7 +743,6 @@
             // 
             // gbPortSettings
             // 
-            this.gbPortSettings.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.gbPortSettings.Controls.Add(this.cmbPortName);
             this.gbPortSettings.Controls.Add(this.cmbBaudRate);
             this.gbPortSettings.Controls.Add(this.cmbStopBits);
@@ -609,7 +753,7 @@
             this.gbPortSettings.Controls.Add(this.lblBaudRate);
             this.gbPortSettings.Controls.Add(this.lblDataBits);
             this.gbPortSettings.Controls.Add(this.label5);
-            this.gbPortSettings.Location = new System.Drawing.Point(6, 15);
+            this.gbPortSettings.Location = new System.Drawing.Point(6, 6);
             this.gbPortSettings.Name = "gbPortSettings";
             this.gbPortSettings.Size = new System.Drawing.Size(370, 64);
             this.gbPortSettings.TabIndex = 8;
@@ -737,7 +881,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(395, 322);
+            this.ClientSize = new System.Drawing.Size(395, 377);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -749,14 +893,26 @@
             this.Load += new System.EventHandler(this.ConfigurationsForm_Load);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.groupBox_ACTiGeneral.ResumeLayout(false);
+            this.groupBox_ACTiGeneral.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
+            this.groupBox_ACTiAdvanced.ResumeLayout(false);
+            this.groupBox_ACTiAdvanced.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.gbPortSettings.ResumeLayout(false);
             this.gbPortSettings.PerformLayout();
@@ -771,7 +927,7 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox textBox_connectionString;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox_ACTiGeneral;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -795,17 +951,16 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.CheckBox checkBox6;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBox_SaveNumbers;
+        private System.Windows.Forms.CheckBox checkBox_AutostartDetection;
+        private System.Windows.Forms.CheckBox checkBox_VerticalDetection;
+        private System.Windows.Forms.CheckBox checkBox_UseEdge;
+        private System.Windows.Forms.CheckBox checkBox_COMAutoOpen;
+        private System.Windows.Forms.CheckBox checkBox_ACTiAutoConn;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.CheckBox checkBox7;
+        private System.Windows.Forms.TextBox textBox_MinCorrelation;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox_FramesTimeout;
         private System.Windows.Forms.TextBox textBox_ACTiHttpPort;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textBox_ATCiID;
@@ -826,5 +981,18 @@
         public System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.GroupBox groupBox_ACTiAdvanced;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.CheckBox checkBox_COMDTR;
+        private System.Windows.Forms.CheckBox checkBox_COMRTS;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.CheckBox checkBox_ACTiDO2;
+        private System.Windows.Forms.CheckBox checkBox_ACTiDO1;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBox2;
     }
 }

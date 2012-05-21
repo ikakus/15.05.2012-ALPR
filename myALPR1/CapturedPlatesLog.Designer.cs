@@ -135,6 +135,7 @@
             this.Controls.Add(this.button_select);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.listView1);
+            this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(989, 656);
             this.Name = "CapturedPlatesLog";
             this.Text = "Captured Plates";

@@ -274,5 +274,149 @@ namespace myALPR1.Properties {
                 this["ACTiServerMulticastIP"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("4600")]
+        public int MinCorrelation {
+            get {
+                return ((int)(this["MinCorrelation"]));
+            }
+            set {
+                this["MinCorrelation"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("60")]
+        public int FramesSleepTime {
+            get {
+                return ((int)(this["FramesSleepTime"]));
+            }
+            set {
+                this["FramesSleepTime"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool AutoConnectACTi {
+            get {
+                return ((bool)(this["AutoConnectACTi"]));
+            }
+            set {
+                this["AutoConnectACTi"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool AutoOpenCOMPort {
+            get {
+                return ((bool)(this["AutoOpenCOMPort"]));
+            }
+            set {
+                this["AutoOpenCOMPort"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool UseEdgeBased {
+            get {
+                return ((bool)(this["UseEdgeBased"]));
+            }
+            set {
+                this["UseEdgeBased"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool UseVerticalDetection {
+            get {
+                return ((bool)(this["UseVerticalDetection"]));
+            }
+            set {
+                this["UseVerticalDetection"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool AutoStartDetection {
+            get {
+                return ((bool)(this["AutoStartDetection"]));
+            }
+            set {
+                this["AutoStartDetection"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool SaveCapturedPlates {
+            get {
+                return ((bool)(this["SaveCapturedPlates"]));
+            }
+            set {
+                this["SaveCapturedPlates"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool DOutput1 {
+            get {
+                return ((bool)(this["DOutput1"]));
+            }
+            set {
+                this["DOutput1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool DOutput2 {
+            get {
+                return ((bool)(this["DOutput2"]));
+            }
+            set {
+                this["DOutput2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool RTS {
+            get {
+                return ((bool)(this["RTS"]));
+            }
+            set {
+                this["RTS"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool DTR {
+            get {
+                return ((bool)(this["DTR"]));
+            }
+            set {
+                this["DTR"] = value;
+            }
+        }
     }
 }

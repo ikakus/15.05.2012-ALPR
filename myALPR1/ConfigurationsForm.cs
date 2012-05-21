@@ -33,8 +33,171 @@ namespace myALPR1
         private string Password;
         private string ConString;
 
+        private int minCorrelation;
+        private int framesSleep;
+
+        private bool autoConnectACTi;
+        private bool autoOpenCOM;
+        private bool useEdgeBasedeDetection;
+        private bool useVerticalLinesDetection;
+        private bool autostartDetection;
+        private bool saveDetectedNumbers;
+
+        private bool DO1;
+        private bool DO2;
+        private bool RTS;
+        private bool DTR;
+
+        public bool useDTR
+        {
+            get
+            {
+                return DTR;
+            }
+            set
+            {
+                DTR = value;
+            }
+        }
+        public bool useRTS
+        {
+            get
+            {
+                return RTS;
+            }
+            set
+            {
+                RTS = value;
+            }
+        }
+        public bool DOutput2
+        {
+            get
+            {
+                return DO2;
+            }
+            set
+            {
+                DO2 = value;
+            }
+        }
+        public bool DOutput1
+        {
+            get 
+            {
+                return DO1;
+            }
+            set
+            
+            {
+                DO1 = value;
+            }
+        }
 
 
+        public bool SaveDetectedNumbers
+        {
+            get
+            {
+                return saveDetectedNumbers;
+            }
+            set
+            {
+                saveDetectedNumbers = value;
+            }
+        }
+
+        public bool AutostartDetection
+        {
+            get
+            {
+                return autostartDetection;
+            }
+
+            set
+            {
+                autostartDetection = value;
+            }
+        }
+
+        public bool UseVerticalDetection
+        {
+            get 
+            {
+                return useVerticalLinesDetection;
+            }
+            set
+
+            {
+                useVerticalLinesDetection = value;
+            }
+        }
+
+        public bool AutoOpenCOMPort
+        {
+            get
+            {
+                return autoOpenCOM;
+            }
+
+            set
+            {
+                autoOpenCOM = value;
+            }
+        }
+
+
+        public bool AutoConnectACTi
+
+        {
+            get
+            {
+                return autoConnectACTi;
+            }
+            set
+            {
+                autoConnectACTi = value;
+            }
+        }
+
+        public int MinCorrelation
+        {
+            get
+            {
+                return minCorrelation;
+            }
+
+            set
+            {
+                minCorrelation = value;
+            }
+        }
+
+        public int FrameSleepTime
+        {
+            get 
+            {
+                return framesSleep;
+            }
+            set
+            {
+                framesSleep = value;
+            }
+        }
+
+        public bool useEdgeDetection
+        {
+            get
+            {
+                return useEdgeBasedeDetection;
+            }
+
+            set
+            {
+                useEdgeBasedeDetection = value;
+            }
+
+        }
 
         public string getIP()
         {
@@ -52,6 +215,24 @@ namespace myALPR1
         public string getConString()
         {
             return ConString;
+        }
+
+
+        delegate void OpenComPortDelegate();
+
+
+        public void OpenCOMPort()
+        {
+
+            if (this.InvokeRequired)
+                try
+                {
+                    this.Invoke(new OpenComPortDelegate(OpenCOMPort), new object[] { });
+                }
+                catch (Exception ex)
+                { }
+            else
+                this.OpenPort();
         }
 
         private int GetNthIndex(string s, char t, int n)//for Convert() Function
@@ -162,6 +343,26 @@ namespace myALPR1
 
         public void SaveSettings()
         {
+
+
+
+            settings.DOutput1 = checkBox_ACTiDO1.Checked;
+            settings.DOutput2 = checkBox_ACTiDO2.Checked;
+
+            settings.RTS = checkBox_COMRTS.Checked;
+            settings.DTR = checkBox_COMDTR.Checked;
+
+            settings.FramesSleepTime = int.Parse( textBox_FramesTimeout.Text);
+            settings.MinCorrelation = int.Parse(textBox_MinCorrelation.Text);
+
+            settings.AutoConnectACTi = checkBox_ACTiAutoConn.Checked;
+            settings.AutoStartDetection = checkBox_AutostartDetection.Checked;
+
+            settings.AutoOpenCOMPort = checkBox_COMAutoOpen.Checked;
+            settings.SaveCapturedPlates = checkBox_SaveNumbers.Checked;
+            settings.UseEdgeBased = checkBox_UseEdge.Checked;
+            settings.UseVerticalDetection = checkBox_VerticalDetection.Checked ;
+
             settings.COMPortBaudRate = int.Parse(cmbBaudRate.Text);
             settings.COMPortDataBits = int.Parse(cmbDataBits.Text);
             settings.COMPortParity = (Parity)Enum.Parse(typeof(Parity), cmbParity.Text);
@@ -174,13 +375,43 @@ namespace myALPR1
 
             settings.DBConnectionString = textBox_connectionString.Text;
 
+
             settings.Save();
+
+
+            DO1 = settings.DOutput1;
+            DO2 = settings.DOutput2;
+
+            useDTR = settings.DTR;
+            useRTS = settings.RTS;
+
+            autoConnectACTi = settings.AutoConnectACTi;
+            autostartDetection = settings.AutoStartDetection;
+
+            autoOpenCOM = settings.AutoOpenCOMPort;
+            saveDetectedNumbers = settings.SaveCapturedPlates;
+            useEdgeBasedeDetection = settings.UseEdgeBased;
+            useVerticalLinesDetection = settings.UseVerticalDetection;
         }
         public void LoadSettingsGlobal()
         {
             this.IP = settings.ACTiServerIP;
             this.User = settings.ACTiUser;
             this.Password = settings.ACTiPAssword;
+
+
+
+            framesSleep = settings.FramesSleepTime;
+            minCorrelation = settings.MinCorrelation;
+
+            autoConnectACTi = settings.AutoConnectACTi;
+            autostartDetection = settings.AutoStartDetection;
+
+            autoOpenCOM = settings.AutoOpenCOMPort;
+            saveDetectedNumbers= settings.SaveCapturedPlates;
+            useEdgeBasedeDetection = settings.UseEdgeBased;
+            useVerticalLinesDetection = settings.UseVerticalDetection;
+
 
             if (settings.DBConnectionString == "")
             {
@@ -286,6 +517,24 @@ namespace myALPR1
             textBox_MediaType.Text = settings.ACTiServerMediaType.ToString();
 
 
+            textBox_FramesTimeout.Text = settings.FramesSleepTime.ToString();
+            textBox_MinCorrelation.Text = settings.MinCorrelation.ToString();
+
+            checkBox_ACTiAutoConn.Checked = settings.AutoConnectACTi;
+            checkBox_AutostartDetection.Checked = settings.AutoStartDetection;
+
+            checkBox_COMAutoOpen.Checked = settings.AutoOpenCOMPort;
+            checkBox_SaveNumbers.Checked = settings.SaveCapturedPlates;
+            checkBox_UseEdge.Checked = settings.UseEdgeBased;
+            checkBox_VerticalDetection.Checked = settings.UseVerticalDetection;
+
+
+            checkBox_COMDTR.Checked = settings.DTR;
+            checkBox_COMRTS.Checked = settings.RTS;
+
+            checkBox_ACTiDO1.Checked = settings.DOutput1;
+            checkBox_ACTiDO2.Checked = settings.DOutput2;
+
             comboBox_ACTiBaudRate.Text = settings.ACTiServerBaudRate.ToString();
 
             cmbBaudRate.Text = settings.COMPortBaudRate.ToString();
@@ -374,9 +623,47 @@ namespace myALPR1
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        public void DisableEnableACTiSettings(bool ACTiIsconnected)
+        {
+
+            groupBox_ACTiAdvanced.Enabled = ACTiIsconnected;
+            groupBox_ACTiGeneral.Enabled = ACTiIsconnected;
+            
+
+        }
+
+
+        private void OpenPort()
         {
             comport.Open();
+
+            gbPortSettings.Enabled = !comport.IsOpen();
+            if (comport.IsOpen())
+            {
+                button3.Text = "Close Port";
+
+            }
+            else button3.Text = "Open Port";
+
+            
+
+
+        }
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+            OpenPort();
+
+        }
+
+        private void checkBox_UseEdge_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

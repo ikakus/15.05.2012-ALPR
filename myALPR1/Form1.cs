@@ -56,7 +56,9 @@ namespace myALPR1
         SecBase sch;
         CapturedPlatesLog plLog;
 
-        int CORRELATION = 4600;
+        COMPortConnectionClass COMPortConection;
+
+        
 
         //public void UpdateListView(ListViewItem itm, ListView listv, ImageList BmList)
         //{
@@ -114,63 +116,67 @@ namespace myALPR1
             Bitmap TempBMP = new Bitmap(640, 480);
             List<Bitmap> imgList;
 
-           // listView1.View = View.LargeIcon;
+            // listView1.View = View.LargeIcon;
             ImageList bmpLIST = new ImageList();
             ALPRclass.ReturnedValue returnedVal = new ALPRclass.ReturnedValue();
-
+            IFilter contrast = new ContrastCorrection(3);
             Bitmap bmpEdgeDetectedRedSquare = new Bitmap(640, 480);
+            
+          
+
+              
+                //BitmapData bitmapData = image.LockBits(new Rectangle(0, 0, image.Width, image.Height),
+                //ImageLockMode.ReadOnly, image.PixelFormat);
+                //UnmanagedImage img = new UnmanagedImage(bitmapData);
+
 
             while (!requestStop)
             {
-              
 
-                 Monitor.Enter(this);
 
+                Monitor.Enter(this);
+
+                Thread.Sleep(ConForm.FrameSleepTime);
                 bool EdgeReturned = false;
                 bool VerticalReturned = false;
+
+                string EdgStr = ".";
                 TempBMP = ACTi.getCurrentFrame();//BTCapture.getBMP();
+
                 if (TempBMP != null)
                 {
                     globalBMPtoALPR = ResizeNearestNeighbor.Apply(TempBMP);
                 }
                 myALPR.setSumCorrelation(0);
+
                 Bitmap image = globalBMPtoALPR;
 
 
-                #region Edge Detection based ALPR
 
-              
                 BitmapData bitmapData = image.LockBits(new Rectangle(0, 0, image.Width, image.Height),
                 ImageLockMode.ReadOnly, image.PixelFormat);
                 UnmanagedImage img = new UnmanagedImage(bitmapData);
-                 string EdgStr=".";
-               // IFilter grayfilter = new GrayscaleBT709();
-                IFilter contrast = new ContrastCorrection(3);
-                // IFilter brightnes = new BrightnessCorrection(0.13f);
 
-                // img = brightnes.Apply(img);
-                if (checkBox1.Checked == true)
-                {
-                    img = contrast.Apply(img);
-                }
 
-                if (checkBox3.Checked == false && checkBox2.Checked == false)
-                {
-                    pictureBox_image.Image = img.ToManagedImage();
-                }
 
+              //  image.UnlockBits(bitmapData);
+
+
+                pictureBox_image.Image = img.ToManagedImage(); //BaseConnection.GetPictureFromBaase(2); //
+
+                #region EdgeDetection
                 imgList = Edg.findPlates(img);
                 image.UnlockBits(bitmapData);
-               // Bitmap bmpEdgeDetectedRedSquare = new Bitmap(640, 480);
-                if (checkBox3.Checked == true)
+                // Bitmap bmpEdgeDetectedRedSquare = new Bitmap(640, 480);
+                if (ConForm.useEdgeDetection == true)
                 {
-                    
+
 
                     foreach (Bitmap bmp in imgList)
                     {
                         if (bmp.Width == 640 & bmp.Height == 480)
                         {
-                            pictureBox_image.Image = bmp;
+                           
                             bmpEdgeDetectedRedSquare = bmp;
                         }
                         else
@@ -180,7 +186,7 @@ namespace myALPR1
                             EdgStr = Edg.OCR(bmp);
                             if (EdgStr.Length > 0)
                             {
-                                if (Edg.getSumCorrealtion() > CORRELATION || EdgStr!="" && EdgStr!="")
+                                if (Edg.getSumCorrealtion() > ConForm.MinCorrelation || EdgStr != "" && EdgStr != "")
                                 {
                                     UpdateLabel(EdgStr, label4);
                                     EdgeReturned = true;
@@ -191,7 +197,7 @@ namespace myALPR1
                                     UpdateLabel("too low", label4);
                                     EdgeReturned = false;
                                 }
-                               
+
                                 UpdateLabel(Edg.getSumCorrealtion().ToString(), label5);
 
                             }
@@ -208,26 +214,22 @@ namespace myALPR1
                 }
                 #endregion
 
-
                 #region Vertical lines detection ALPR
-                //if (TempBMP != null)
-                //{
-                //    globalBMPtoALPR = ResizeNearestNeighbor.Apply(TempBMP);
-                //}
-                //myALPR.setSumCorrelation(0);
-                //Bitmap image = globalBMPtoALPR;
 
-             
 
-                if (checkBox2.Checked == true)
+
+                if (ConForm.UseVerticalDetection == true)
                 {
+
+
+
                     returnedVal = myALPR.doTheShit(globalBMPtoALPR);//img.ToManagedImage());
 
 
                     pictureBox_graph.Image = returnedVal.GraphBMP;
                     if (returnedVal.RecognizedPlates[0].Length == 7)
                     {
-                        if (myALPR.getSumCorrealtion() > CORRELATION  )
+                        if (myALPR.getSumCorrealtion() > ConForm.MinCorrelation)
                         {
                             UpdateLabel(returnedVal.RecognizedPlates[0], label1);
                             VerticalReturned = true;
@@ -247,14 +249,14 @@ namespace myALPR1
                         UpdateLabel(".", label1);
                     }
 
-                    if (checkBox3.Checked == false)
-                    {
-                        pictureBox_image.Image = returnedVal.BMap;
-
-                    }
+                  
 
                 }
                 #endregion
+
+           
+
+                
 
 
                 if (EdgeReturned == true && VerticalReturned == true)
@@ -263,8 +265,17 @@ namespace myALPR1
                     UpdateLabel(returnedVal.RecognizedPlates[0], label6); //MessageBox.Show("Olol");
                     //MessageBox.Show(BaseConnection.GetInfoById( BaseConnection.Search(returnedVal.RecognizedPlates[0])));
                     Thread.Sleep(10);
-                    BaseConnection.StorePictureToLogBase(countRows + 1, globalBMPtoALPR, returnedVal.RecognizedPlates[0], DateTime.Now);
-                    countRows++;
+                    
+                    
+                    
+
+                    if (ConForm.SaveDetectedNumbers == true)
+                    {
+                        BaseConnection.StorePictureToLogBase(countRows + 1, globalBMPtoALPR, returnedVal.RecognizedPlates[0], DateTime.Now);
+                        countRows++;
+                    }
+
+                    OutputIfFoundPlate(returnedVal.RecognizedPlates[0]);
                 }
                 else
                 {
@@ -281,9 +292,14 @@ namespace myALPR1
                         if (EdgStr != "")
                         {
 
-                            BaseConnection.StorePictureToLogBase(countRows + 1, bmpEdgeDetectedRedSquare, EdgStr, DateTime.Now);
-                            countRows++;
+                            if (ConForm.SaveDetectedNumbers == true)
+                            {
+                                BaseConnection.StorePictureToLogBase(countRows + 1, bmpEdgeDetectedRedSquare, EdgStr, DateTime.Now);
+                                countRows++;
+                            }
+                             OutputIfFoundPlate(EdgStr);
                         }
+                      
                 
                     }
 
@@ -293,42 +309,84 @@ namespace myALPR1
                         {
                             setLabelColor(label6, Color.DarkGoldenrod);
                             UpdateLabel(returnedVal.RecognizedPlates[0], label6);
-                            Thread.Sleep(10);
-                            BaseConnection.StorePictureToLogBase(countRows + 1, globalBMPtoALPR, returnedVal.RecognizedPlates[0], DateTime.Now);
-                            countRows++;
+                            //Thread.Sleep(10);
+
+                            if (ConForm.SaveDetectedNumbers == true)
+                            {
+                                BaseConnection.StorePictureToLogBase(countRows + 1, globalBMPtoALPR, returnedVal.RecognizedPlates[0], DateTime.Now);
+                                countRows++;
+                            }
+                            OutputIfFoundPlate(returnedVal.RecognizedPlates[0]);
                         }
                     
                 }
 
 
                 
-                Thread.Sleep(60);
+//                Thread.Sleep(100);
 
 
-                 Monitor.Exit(this);
+                Monitor.Exit(this);
             }
 
         }
-        public void Form1_Load(object sender, EventArgs e)
+
+
+
+        public void OutputIfFoundPlate(string str)
         {
+            if (BaseConnection.Search(str) > 0)
+            {
+                if (ConForm.DOutput1 == true)
+                {
+                    ACTi.DO1on();
+                    Thread.Sleep(20);
+                    ACTi.DO1off();
+                }
+                if (ConForm.DOutput2 == true)
+                {
+                    ACTi.DO2on();
+                    Thread.Sleep(20);
+                    ACTi.DO2off();
+                }
+
+                if (ConForm.useRTS == true)
+                {
+                    COMPortConection.enableRTS();
+                    Thread.Sleep(20);
+                    COMPortConection.disableRTS();
+                }
+
+                if (ConForm.useDTR == true)
+                {
+                    COMPortConection.enableDTR();
+                    Thread.Sleep(20);
+                    COMPortConection.disableDTR();
+                }
+            }
+        }
+
+
+        public void InitializeClasses()
+        {
+
             try
             {
-                // "192.168.1.162", "Admin", "123456");
-                COMPortConnectionClass COMPortConection = new COMPortConnectionClass();
+
+                COMPortConection = new COMPortConnectionClass();
 
                 ConForm = new ConfigurationsForm(COMPortConection);
-                // ConForm.getConString();
-               // ACTi = new ACTiServerCaptureClass(this, ConForm.getIP(), ConForm.getUser(), ConForm.getPass());
 
                 if (connected == true)
                 {
                     button1.Enabled = true;
-                    
+
                 }
-                else {
+                else
+                {
                     button1.Enabled = false;
                 }
-                
+
                 BaseConnection = new LicensePlatesDBConnectionClass(ConForm.getConString());//"IKAKUS", "ALPRDataBase", "True", "sa", "123456");//("IKA-FDF3AA55734", "ALPRDataBase", "True", "sa", "12345");
                 countRows = BaseConnection.getRowsCount();
                 sch = new SecBase(BaseConnection);
@@ -336,15 +394,46 @@ namespace myALPR1
                 //ConForm.createDefaultConfFile();
                 myALPR.mOcr.fillEtalonBase();
                 Edg.EdgemOcr.fillEtalonBase();
-            //    CamraCaptureThread = new Thread(cap);
-               // CamraCaptureThread.IsBackground = true;
+
+
+
+                
+
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
 
+ 
+        }
 
+
+        public void loadAutomotionSettings()
+        {
+            if (ConForm.AutoConnectACTi == true)
+            {
+                ConnectToACTi();
+            }
+
+            if (ConForm.AutostartDetection == true)
+            {
+                StartPauseVideoCapture();
+            }
+
+            if (ConForm.AutoOpenCOMPort==true)
+            {
+                ConForm.OpenCOMPort();
+            }
+
+
+
+        }
+        public void Form1_Load(object sender, EventArgs e)
+        {
+            InitializeClasses();
+            loadAutomotionSettings();
         }
         public void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -371,160 +460,151 @@ namespace myALPR1
 
 
         } 
-        private void button_Open_Click(object sender, EventArgs e)
+        //private void button_Open_Click(object sender, EventArgs e)
+        //{
+
+        //    // EdgNBlobALPRClass Edg = new EdgNBlobALPRClass();
+        //    OpenFileDialog ofd = new OpenFileDialog();
+        //    List<Bitmap> imgList;
+        //    if (ofd.ShowDialog() == DialogResult.OK)
+        //    {
+
+
+        //        try
+        //        {
+        //            Stopwatch watch = new Stopwatch();
+
+        //            ImageList bmpLIST = new ImageList();
+
+        //            ALPRclass.ReturnedValue returnedVal = new ALPRclass.ReturnedValue();
+        //            Bitmap image = new Bitmap(ofd.FileName);
+        //            // create image document
+        //            BitmapData bitmapData = image.LockBits(new Rectangle(0, 0, image.Width, image.Height), ImageLockMode.ReadOnly, image.PixelFormat);
+        //            UnmanagedImage img = new UnmanagedImage(bitmapData);
+
+        //            watch.Start();
+        //            IFilter contrast = new ContrastCorrection(3);
+        //            IFilter brightnes = new BrightnessCorrection(0.13f);
+
+        //            // img = brightnes.Apply(img);
+        //            //img = contrast.Apply(img);
+
+        //            //Bitmap b = Edg.findPlates(img);
+
+
+        //            //listView1.Clear();
+        //            imgList = Edg.findPlates(img);
+
+        //            image.UnlockBits(bitmapData);
+
+        //           // listView1.View = View.LargeIcon;
+        //           // listView1.LargeImageList = bmpLIST;
+        //            bmpLIST.ImageSize = new Size(256, 64);
+        //            foreach (Bitmap bmp in imgList)
+        //            {
+        //                if (bmp.Width == 640 & bmp.Height == 480)
+        //                {
+        //                   // pictureBox_image.Image = bmp;
+        //                }
+        //                else
+        //                {
+        //                    bmpLIST.Images.Add(bmp);
+
+        //                    String str = Edg.OCR(bmp);
+        //                    if (str.Length > 6)
+        //                    {
+
+        //                        UpdateLabel(str, label1);
+        //                        MessageBox.Show(Edg.OCR(bmp));
+        //                    }
+
+        //                }
+        //            }
+
+
+
+        //            for (int j = 0; j < bmpLIST.Images.Count; j++)
+        //            {
+        //                ListViewItem item = new ListViewItem();
+        //                item.ImageIndex = j;
+        //               // this.listView1.Items.Add(item);
+        //            }
+
+
+        //            this.Text = ofd.FileName;
+        //            watch.Stop();
+
+
+
+
+        //          //  label_maxSpike.Text = watch.Elapsed.TotalSeconds.ToString();
+
+
+        //        }
+        //        catch (ApplicationException ex)
+        //        {
+        //            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //        }
+
+
+
+        //    }
+        //}
+        bool suspended = false;
+
+        public void StartPauseVideoCapture()
         {
 
-            // EdgNBlobALPRClass Edg = new EdgNBlobALPRClass();
-            OpenFileDialog ofd = new OpenFileDialog();
-            List<Bitmap> imgList;
-            if (ofd.ShowDialog() == DialogResult.OK)
+            if (suspended == true)
             {
+                CamraCaptureThread.Resume();
+                button1.Text = "Stop";
 
+                suspended = false;
+                return;
+            }
 
-                try
-                {
-                    Stopwatch watch = new Stopwatch();
-
-                    ImageList bmpLIST = new ImageList();
-
-                    ALPRclass.ReturnedValue returnedVal = new ALPRclass.ReturnedValue();
-                    Bitmap image = new Bitmap(ofd.FileName);
-                    // create image document
-                    BitmapData bitmapData = image.LockBits(new Rectangle(0, 0, image.Width, image.Height), ImageLockMode.ReadOnly, image.PixelFormat);
-                    UnmanagedImage img = new UnmanagedImage(bitmapData);
-
-                    watch.Start();
-                    IFilter contrast = new ContrastCorrection(3);
-                    IFilter brightnes = new BrightnessCorrection(0.13f);
-
-                    // img = brightnes.Apply(img);
-                    //img = contrast.Apply(img);
-
-                    //Bitmap b = Edg.findPlates(img);
-
-
-                    //listView1.Clear();
-                    imgList = Edg.findPlates(img);
-
-                    image.UnlockBits(bitmapData);
-
-                   // listView1.View = View.LargeIcon;
-                   // listView1.LargeImageList = bmpLIST;
-                    bmpLIST.ImageSize = new Size(256, 64);
-                    foreach (Bitmap bmp in imgList)
-                    {
-                        if (bmp.Width == 640 & bmp.Height == 480)
-                        {
-                            pictureBox_image.Image = bmp;
-                        }
-                        else
-                        {
-                            bmpLIST.Images.Add(bmp);
-
-                            String str = Edg.OCR(bmp);
-                            if (str.Length > 6)
-                            {
-
-                                UpdateLabel(str, label1);
-                                MessageBox.Show(Edg.OCR(bmp));
-                            }
-
-                        }
-                    }
+            if (started == false)
+            {
+                // ACTi = new ACTiServerCaptureClass(this, "192.168.1.162", "Admin", "123456");
+                button1.Text = "Stop";
+                Thread.Sleep(1000);
+                CamraCaptureThread = new Thread(cap);
+                CamraCaptureThread.IsBackground = true;
+                CamraCaptureThread.Start();
+                requestStop = false;
 
 
 
-                    for (int j = 0; j < bmpLIST.Images.Count; j++)
-                    {
-                        ListViewItem item = new ListViewItem();
-                        item.ImageIndex = j;
-                       // this.listView1.Items.Add(item);
-                    }
-
-
-                    this.Text = ofd.FileName;
-                    watch.Stop();
-
-
-
-
-                  //  label_maxSpike.Text = watch.Elapsed.TotalSeconds.ToString();
-
-
-                }
-                catch (ApplicationException ex)
-                {
-                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
-
+                started = true;
 
             }
-        }
-        bool suspended = false;
-        private void button1_Click(object sender, EventArgs e)
-        {
-           
-            // ACTi = new ACTiServerCaptureClass(this,ConForm.getIP(),ConForm.getUser(),ConForm.getPass());
-
-                if (started == false)
-                {
-                    // ACTi = new ACTiServerCaptureClass(this, "192.168.1.162", "Admin", "123456");
-                    button1.Text = "Start";
-                    Thread.Sleep(1000);
-                    CamraCaptureThread = new Thread(cap);
-                    CamraCaptureThread.IsBackground = true;
-                    CamraCaptureThread.Start();
-
-
-
-                    started = true;
-                    
-                }
-                if (suspended == true)
-                {
-                    CamraCaptureThread.Resume();
-
-                    suspended = false;
-                    
-                }
-
-                
-            
-        }
-        private void button2_Click(object sender, EventArgs e)
-        {
-            if (started == true)
+            else
             {
+
                 CamraCaptureThread.Suspend();
 
+                button1.Text = "Start";
                 // ACTi.Stop();
                 // started = false;
                 suspended = true;
+                return;
 
             }
+
+
+
         }
-        private void button3_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-           // ACTi.Snapshot();
-          //  ACTi.PTZup();
+
+            StartPauseVideoCapture();
+
+
+
         }
-        private void button4_Click(object sender, EventArgs e)
-        {
-          //  ACTi.PTZdown();
-        }
-        private void button5_Click(object sender, EventArgs e)
-        {
-            //ACTi.PTZStop();
-        }
-        private void button6_Click(object sender, EventArgs e)
-        {
-           // ACTi.PTZZoomIn();
-        }
-        private void button7_Click(object sender, EventArgs e)
-        {
-           // ACTi.PTZZoomOut();
-        }
+       
+       
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ConForm.Show();
@@ -549,8 +629,10 @@ namespace myALPR1
 
 
         bool connected = false;
-        private void connectToolStripMenuItem_Click(object sender, EventArgs e)
+
+        public void ConnectToACTi()
         {
+
             if (connected == false)// Connect
             {
                 try
@@ -561,8 +643,10 @@ namespace myALPR1
                     if (ACTi.IsConnected())
                     {
                         button1.Enabled = true;
-                        toolStripDropDownButton1.Text = "Connected";
+                        toolStripDropDownButton1.Text = "Connected to " + ConForm.getIP();
                         toolStripDropDownButton1.Image = Properties.Resources.Bitmap_Green;
+
+                        ConForm.DisableEnableACTiSettings(false);
 
                         connectToolStripMenuItem.Text = "Disconnect";
                         connectToolStripMenuItem.Image = Properties.Resources.Bitmap_Red;
@@ -581,10 +665,13 @@ namespace myALPR1
                 try
                 {
                     ACTi.Disconnect();
-                    
+
                     button1.Enabled = false;
+                    button1.Text = "Start";
                     toolStripDropDownButton1.Text = "Disconnected";
                     toolStripDropDownButton1.Image = Properties.Resources.Bitmap_Red;
+
+                    ConForm.DisableEnableACTiSettings(true);
 
                     connectToolStripMenuItem.Text = "Connect";
                     connectToolStripMenuItem.Image = Properties.Resources.Bitmap_Green;
@@ -592,12 +679,15 @@ namespace myALPR1
                     connected = false;
                     started = false;
 
-                    ACTi.Stop();
+                    //ACTi.Stop();
                     requestStop = true;
 
-                    if (CamraCaptureThread.ThreadState == System.Threading.ThreadState.Background)
-                        CamraCaptureThread.Join();
-                    
+                    if (CamraCaptureThread != null)
+                    {
+                        if (CamraCaptureThread.ThreadState == System.Threading.ThreadState.Background)
+                            CamraCaptureThread.Join();
+                    }
+
 
                 }
                 catch (Exception ex)
@@ -605,6 +695,11 @@ namespace myALPR1
                     MessageBox.Show(ex.Message);
                 }
             }
+ 
+        }
+        private void connectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConnectToACTi();
         }
 
         private void toolStripDropDownButton1_Click(object sender, EventArgs e)
@@ -612,7 +707,47 @@ namespace myALPR1
 
         }
 
-     
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            COMPortConection.enableRTS();
+        }
+
+        private void button6_Click_1(object sender, EventArgs e)
+        {
+            ACTi.DO1on();
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            COMPortConection.enableDTR();
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            COMPortConection.disableDTR();
+        }
+
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+            COMPortConection.disableRTS();
+        }
+
+        private void button7_Click_1(object sender, EventArgs e)
+        {
+            ACTi.DO1off();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            ACTi.DO2on();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            ACTi.DO2off();
+        }
+
+        
 
 
     }

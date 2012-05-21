@@ -160,3 +160,53 @@ C:\Documents and Settings\404\Desktop\17.04.2012 ALPR\myALPR1\obj\x86\Release\my
 C:\Documents and Settings\404\Desktop\17.04.2012 ALPR\myALPR1\obj\x86\Release\GenerateResource.read.1.tlog
 C:\Documents and Settings\404\Desktop\17.04.2012 ALPR\myALPR1\obj\x86\Release\GenerateResource.write.1.tlog
 C:\Documents and Settings\404\Desktop\17.04.2012 ALPR\myALPR1\bin\Release\myALPR1.exe.config
+C:\Documents and Settings\404\Desktop\9.05.2012 ALPR\myALPR1\bin\Release\myALPR1.exe.config
+C:\Documents and Settings\404\Desktop\9.05.2012 ALPR\myALPR1\obj\x86\Release\myALPR1.exe
+C:\Documents and Settings\404\Desktop\9.05.2012 ALPR\myALPR1\obj\x86\Release\myALPR1.pdb
+C:\Documents and Settings\404\Desktop\9.05.2012 ALPR\myALPR1\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Documents and Settings\404\Desktop\9.05.2012 ALPR\myALPR1\obj\x86\Release\myALPR1.AddPlate.resources
+C:\Documents and Settings\404\Desktop\9.05.2012 ALPR\myALPR1\obj\x86\Release\myALPR1.BlobForm.resources
+C:\Documents and Settings\404\Desktop\9.05.2012 ALPR\myALPR1\obj\x86\Release\myALPR1.ConfigurationsForm.resources
+C:\Documents and Settings\404\Desktop\9.05.2012 ALPR\myALPR1\obj\x86\Release\myALPR1.Form1.resources
+C:\Documents and Settings\404\Desktop\9.05.2012 ALPR\myALPR1\obj\x86\Release\myALPR1.Properties.Resources.resources
+C:\Documents and Settings\404\Desktop\9.05.2012 ALPR\myALPR1\obj\x86\Release\myALPR1.CapturedPlatesLog.resources
+C:\Documents and Settings\404\Desktop\9.05.2012 ALPR\myALPR1\obj\x86\Release\myALPR1.SecBase.resources
+C:\Documents and Settings\404\Desktop\9.05.2012 ALPR\myALPR1\obj\x86\Release\GenerateResource.read.1.tlog
+C:\Documents and Settings\404\Desktop\9.05.2012 ALPR\myALPR1\obj\x86\Release\GenerateResource.write.1.tlog
+C:\Documents and Settings\404\Desktop\9.05.2012 ALPR\myALPR1\bin\Release\myALPR1.exe
+C:\Documents and Settings\404\Desktop\9.05.2012 ALPR\myALPR1\bin\Release\myALPR1.pdb
+C:\Documents and Settings\404\Desktop\9.05.2012 ALPR\myALPR1\bin\Release\AForge.DebuggerVisualizers (2008).dll
+C:\Documents and Settings\404\Desktop\9.05.2012 ALPR\myALPR1\bin\Release\AForge.DebuggerVisualizers (2010).dll
+C:\Documents and Settings\404\Desktop\9.05.2012 ALPR\myALPR1\bin\Release\AForge.dll
+C:\Documents and Settings\404\Desktop\9.05.2012 ALPR\myALPR1\bin\Release\AForge.Imaging.dll
+C:\Documents and Settings\404\Desktop\9.05.2012 ALPR\myALPR1\bin\Release\AForge.Imaging.Formats.dll
+C:\Documents and Settings\404\Desktop\9.05.2012 ALPR\myALPR1\bin\Release\AForge.Imaging.IPPrototyper.dll
+C:\Documents and Settings\404\Desktop\9.05.2012 ALPR\myALPR1\bin\Release\AForge.Video.DirectShow.dll
+C:\Documents and Settings\404\Desktop\9.05.2012 ALPR\myALPR1\bin\Release\AForge.Video.dll
+C:\Documents and Settings\404\Desktop\9.05.2012 ALPR\myALPR1\bin\Release\AForge.Video.FFMPEG.dll
+C:\Documents and Settings\404\Desktop\9.05.2012 ALPR\myALPR1\bin\Release\AForge.Video.VFW.dll
+C:\Documents and Settings\404\Desktop\15.05.2012 ALPR\myALPR1\bin\Release\myALPR1.exe.config
+C:\Documents and Settings\404\Desktop\15.05.2012 ALPR\myALPR1\obj\x86\Release\myALPR1.exe
+C:\Documents and Settings\404\Desktop\15.05.2012 ALPR\myALPR1\obj\x86\Release\myALPR1.pdb
+C:\Documents and Settings\404\Desktop\15.05.2012 ALPR\myALPR1\bin\Release\myALPR1.exe
+C:\Documents and Settings\404\Desktop\15.05.2012 ALPR\myALPR1\bin\Release\myALPR1.pdb
+C:\Documents and Settings\404\Desktop\15.05.2012 ALPR\myALPR1\bin\Release\AForge.DebuggerVisualizers (2008).dll
+C:\Documents and Settings\404\Desktop\15.05.2012 ALPR\myALPR1\bin\Release\AForge.DebuggerVisualizers (2010).dll
+C:\Documents and Settings\404\Desktop\15.05.2012 ALPR\myALPR1\bin\Release\AForge.dll
+C:\Documents and Settings\404\Desktop\15.05.2012 ALPR\myALPR1\bin\Release\AForge.Imaging.dll
+C:\Documents and Settings\404\Desktop\15.05.2012 ALPR\myALPR1\bin\Release\AForge.Imaging.Formats.dll
+C:\Documents and Settings\404\Desktop\15.05.2012 ALPR\myALPR1\bin\Release\AForge.Imaging.IPPrototyper.dll
+C:\Documents and Settings\404\Desktop\15.05.2012 ALPR\myALPR1\bin\Release\AForge.Video.DirectShow.dll
+C:\Documents and Settings\404\Desktop\15.05.2012 ALPR\myALPR1\bin\Release\AForge.Video.dll
+C:\Documents and Settings\404\Desktop\15.05.2012 ALPR\myALPR1\bin\Release\AForge.Video.FFMPEG.dll
+C:\Documents and Settings\404\Desktop\15.05.2012 ALPR\myALPR1\bin\Release\AForge.Video.VFW.dll
+C:\Documents and Settings\404\Desktop\15.05.2012 ALPR\myALPR1\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Documents and Settings\404\Desktop\15.05.2012 ALPR\myALPR1\obj\x86\Release\myALPR1.AddPlate.resources
+C:\Documents and Settings\404\Desktop\15.05.2012 ALPR\myALPR1\obj\x86\Release\myALPR1.BlobForm.resources
+C:\Documents and Settings\404\Desktop\15.05.2012 ALPR\myALPR1\obj\x86\Release\myALPR1.ConfigurationsForm.resources
+C:\Documents and Settings\404\Desktop\15.05.2012 ALPR\myALPR1\obj\x86\Release\myALPR1.Form1.resources
+C:\Documents and Settings\404\Desktop\15.05.2012 ALPR\myALPR1\obj\x86\Release\myALPR1.Properties.Resources.resources
+C:\Documents and Settings\404\Desktop\15.05.2012 ALPR\myALPR1\obj\x86\Release\myALPR1.CapturedPlatesLog.resources
+C:\Documents and Settings\404\Desktop\15.05.2012 ALPR\myALPR1\obj\x86\Release\myALPR1.SecBase.resources
+C:\Documents and Settings\404\Desktop\15.05.2012 ALPR\myALPR1\obj\x86\Release\GenerateResource.read.1.tlog
+C:\Documents and Settings\404\Desktop\15.05.2012 ALPR\myALPR1\obj\x86\Release\GenerateResource.write.1.tlog

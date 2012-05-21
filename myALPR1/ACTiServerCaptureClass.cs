@@ -55,6 +55,41 @@ namespace myALPR1
            
         }
 
+
+        public void DO1on()
+        {
+            if (oMedia.NetworkStatus > 0)
+            {
+                oMedia.SetDigitalOutput(1, 1);
+            }
+        }
+
+        public void DO1off()
+        {
+            if (oMedia.NetworkStatus > 0)
+            {
+                oMedia.SetDigitalOutput(1, 0);
+            }
+        }
+
+
+        public void DO2on()
+        {
+            if (oMedia.NetworkStatus > 0)
+            {
+                oMedia.SetDigitalOutput(2, 1);
+            }
+        }
+
+        public void DO2off()
+        {
+            if (oMedia.NetworkStatus > 0)
+            {
+                oMedia.SetDigitalOutput(2, 0);
+            }
+        }
+
+
         public bool IsConnected()
         
         {
