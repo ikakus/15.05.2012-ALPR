@@ -210,3 +210,9 @@ C:\Documents and Settings\404\Desktop\15.05.2012 ALPR\myALPR1\obj\x86\Release\my
 C:\Documents and Settings\404\Desktop\15.05.2012 ALPR\myALPR1\obj\x86\Release\myALPR1.SecBase.resources
 C:\Documents and Settings\404\Desktop\15.05.2012 ALPR\myALPR1\obj\x86\Release\GenerateResource.read.1.tlog
 C:\Documents and Settings\404\Desktop\15.05.2012 ALPR\myALPR1\obj\x86\Release\GenerateResource.write.1.tlog
+E:\Code stuff\15.05.2012 ALPR\myALPR1\bin\Release\myALPR1.exe.config
+E:\Code stuff\15.05.2012 ALPR\myALPR1\obj\x86\Release\myALPR1.exe
+E:\Code stuff\15.05.2012 ALPR\myALPR1\obj\x86\Release\myALPR1.pdb
+D:\Code stuff\15.05.2012 ALPR\myALPR1\bin\Release\myALPR1.exe.config
+D:\Code stuff\15.05.2012 ALPR\myALPR1\obj\x86\Release\myALPR1.exe
+D:\Code stuff\15.05.2012 ALPR\myALPR1\obj\x86\Release\myALPR1.pdb

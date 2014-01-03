@@ -63,9 +63,6 @@
             this.textBox_MinCorrelation = new System.Windows.Forms.TextBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.groupBox_ACTiAdvanced = new System.Windows.Forms.GroupBox();
             this.comboBox_ACTiBaudRate = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -111,7 +108,6 @@
             this.groupBox1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.groupBox7.SuspendLayout();
             this.groupBox_ACTiAdvanced.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.gbPortSettings.SuspendLayout();
@@ -467,7 +463,6 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.groupBox7);
             this.tabPage2.Controls.Add(this.groupBox_ACTiAdvanced);
             this.tabPage2.Controls.Add(this.groupBox_ACTiGeneral);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
@@ -478,37 +473,6 @@
             this.tabPage2.Text = "ACTi Video Server";
             this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
-            // 
-            // groupBox7
-            // 
-            this.groupBox7.Controls.Add(this.checkBox1);
-            this.groupBox7.Controls.Add(this.checkBox2);
-            this.groupBox7.Location = new System.Drawing.Point(200, 7);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(163, 42);
-            this.groupBox7.TabIndex = 13;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "ACTi Outputs";
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(83, 19);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(48, 17);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "DO2";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(6, 19);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(48, 17);
-            this.checkBox2.TabIndex = 0;
-            this.checkBox2.Text = "DO1";
-            this.checkBox2.UseVisualStyleBackColor = true;
             // 
             // groupBox_ACTiAdvanced
             // 
@@ -909,8 +873,6 @@
             this.groupBox1.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
             this.groupBox_ACTiAdvanced.ResumeLayout(false);
             this.groupBox_ACTiAdvanced.PerformLayout();
             this.tabPage3.ResumeLayout(false);
@@ -991,8 +953,5 @@
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.CheckBox checkBox_ACTiDO2;
         private System.Windows.Forms.CheckBox checkBox_ACTiDO1;
-        private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
     }
 }

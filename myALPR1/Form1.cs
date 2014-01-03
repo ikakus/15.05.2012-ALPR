@@ -419,7 +419,10 @@ namespace myALPR1
 
             if (ConForm.AutostartDetection == true)
             {
-                StartPauseVideoCapture();
+                if (ACTi.IsConnected())
+                {
+                    StartPauseVideoCapture();
+                }
             }
 
             if (ConForm.AutoOpenCOMPort==true)
@@ -745,6 +748,29 @@ namespace myALPR1
         private void button9_Click(object sender, EventArgs e)
         {
             ACTi.DO2off();
+        }
+
+        bool small = true;
+        private void button10_Click(object sender, EventArgs e)
+        {
+            
+            if(small==false)
+            {
+                this.Width = this.Width - 200;
+                button10.Left = button10.Left - 200;
+                small = true;
+                button10.Text = ">";
+                return;
+            }
+            if (small == true)
+            {
+
+                this.Width = this.Width + 200;
+                button10.Left = button10.Left + 200;
+                small = false; 
+                button10.Text = "<";
+ 
+            }
         }
 
         

@@ -109,7 +109,7 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click_1);
             // 
-            // Scheduler
+            // SecBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -119,8 +119,9 @@
             this.Controls.Add(this.button_select);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.listView1);
+            this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(642, 501);
-            this.Name = "Scheduler";
+            this.Name = "SecBase";
             this.Text = "Edit Database";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Scheduler_FormClosing);
             this.Load += new System.EventHandler(this.Scheduler_Load);
