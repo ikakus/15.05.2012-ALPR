@@ -216,3 +216,6 @@ E:\Code stuff\15.05.2012 ALPR\myALPR1\obj\x86\Release\myALPR1.pdb
 D:\Code stuff\15.05.2012 ALPR\myALPR1\bin\Release\myALPR1.exe.config
 D:\Code stuff\15.05.2012 ALPR\myALPR1\obj\x86\Release\myALPR1.exe
 D:\Code stuff\15.05.2012 ALPR\myALPR1\obj\x86\Release\myALPR1.pdb
+C:\Users\HP\Documents\GitHub\15.05.2012-ALPR\myALPR1\bin\Release\myALPR1.exe.config
+C:\Users\HP\Documents\GitHub\15.05.2012-ALPR\myALPR1\obj\x86\Release\myALPR1.exe
+C:\Users\HP\Documents\GitHub\15.05.2012-ALPR\myALPR1\obj\x86\Release\myALPR1.pdb

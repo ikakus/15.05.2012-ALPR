@@ -254,11 +254,6 @@ namespace myALPR1
                 }
                 #endregion
 
-           
-
-                
-
-
                 if (EdgeReturned == true && VerticalReturned == true)
                 {
                     setLabelColor(label6, Color.Green);
